@@ -17,7 +17,7 @@ video.on('info', info => {
   console.log('size: ' + info.size);
 
   video.pipe(fs.createWriteStream(`${destination}/${info._filename}`));
-  res.send({ message: 'download started'})
+  res.send(info)
 });
 
 }
