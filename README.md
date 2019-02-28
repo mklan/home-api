@@ -1,3 +1,7 @@
+# home-api
+
+rest api with useful connectors for home labs
+
 ## setup
 
 1. create `.env` file in project root
@@ -12,7 +16,7 @@ npx nodemon
 npm start
 ```
 
-## prdocution use
+## deployment
 
 ```
 npm install -g pm2
