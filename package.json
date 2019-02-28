@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "nodemon src/index.js",
-    "production": "pm2 src/index.js"
+    "production": "pm2 start src/index.js"
   },
   "dependencies": {
     "config": "^3.0.1",
