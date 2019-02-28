@@ -12,7 +12,7 @@ rest api with useful connectors for home labs
 ## development
 
 ```
-npx nodemon
+npm install -g nodemon
 npm start
 ```
 
