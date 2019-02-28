@@ -5,7 +5,7 @@ rest api with useful connectors for home labs
 ## setup
 
 1. create `.env` file in project root
-2. add API_KEY=some_random_passphrase` to `.env` file
+2. add `API_KEY=some_random_passphrase` to `.env` file
 3. setup configuration by editing `config/default.json`
 4. `npm install`
 
