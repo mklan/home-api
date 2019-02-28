@@ -27,7 +27,7 @@ npm run production
 
 downloads youtube video
  
-`GET /y2mp4?apikey=[your:key]&id=[youtube_id]`
+`GET /y2mp4?apikey=[api_key]&id=[youtube_id]`
 
 
-more coming soon
+more apis coming soon...
