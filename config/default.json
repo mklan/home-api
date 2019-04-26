@@ -3,6 +3,10 @@
   "modules": {
     "youtube_dl": {
       "video_destination": "videos"
+    },
+    "educom_sms": {
+      "user": "your phone number",
+      "password": "your kontomanager password" 
     }
   }
 }
