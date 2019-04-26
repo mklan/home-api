@@ -25,9 +25,13 @@ npm run production
 
 ## api
 
-downloads youtube video
+download youtube video
  
 `GET /y2mp4?apikey=[api_key]&id=[youtube_id]`
+
+send sms via educom
+
+`GET /sms?apikey=[api_key]&recipient=[int. phone Number]&text=[message]`
 
 
 more apis coming soon...
