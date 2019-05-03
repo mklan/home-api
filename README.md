@@ -34,4 +34,13 @@ send sms via educom
 `GET /sms?apikey=[api_key]&recipient=[int. phone Number]&text=[message]`
 
 
+currently only as GET requests available. This allows us triggering api calls via address bar, but is not semantically correct.
+
 more apis coming soon...
+
+## Ideas / TODO
+
+- headless whatsapp (bot system)
+- notes api
+- oAuth
+
