@@ -1,7 +1,7 @@
 const sendText = require('educom-sms');
 
 const sendEducomSMS = ({ user, password }) => async (req, res) => {
-  const { recipient, text } = req.query;
+  const { recipient, text } = req.body;
 
   try {
     await sendText({
@@ -13,7 +13,6 @@ const sendEducomSMS = ({ user, password }) => async (req, res) => {
   } catch (e) {
     return res.status(500).json({ errors: ['error sending sms', e.message] });
   }
-
 
   res.send('sms sent!');
 };

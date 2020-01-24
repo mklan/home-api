@@ -8,16 +8,25 @@
     "production": "pm2 start src/index.js"
   },
   "dependencies": {
+    "axios": "^0.19.2",
+    "body-parser": "^1.19.0",
     "config": "^3.0.1",
     "dotenv": "^6.2.0",
     "educom-sms": "^1.0.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-prettier": "^3.1.2",
     "express": "^4.16.4",
     "express-validator": "^5.3.1",
+    "node-telegram-bot-api": "^0.40.0",
+    "react-router-dom": "^5.1.2",
+    "request": "^2.88.0",
+    "rsuite": "^4.1.4",
     "youtube-dl": "^1.12.2"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.17.2"
+    "eslint-plugin-import": "^2.17.2",
+    "nodemon": "^2.0.2"
   }
 }

@@ -2,21 +2,33 @@ require('dotenv').config();
 
 const config = require('config');
 const express = require('express');
-const { check } = require('express-validator/check');
+const bodyParser = require('body-parser');
 
-const auth = require('./middlewares/auth');
-const validationError = require('./middlewares/validationError');
 const router = require('./api');
 
+const runYoutubeDlBot = require('./bots/telegram/youtube-dl');
+
 const app = express();
-const port = config.get('port');
+const port = config.has('port') ? config.get('port') : 3000;
 
-app.use(check('apikey').isString());
-app.use(validationError);
-app.use(auth);
-
+app.use(bodyParser.json());
 app.use('/', router);
 
-app.listen(port, function () {
-  console.log(`Example app listening on port ${port}!`);
+app.listen(port, function() {
+  console.log(`HomeApi listening on port ${port}!`);
+});
+
+// start bots
+
+const getApiKeyByUsername = username =>
+  Object.entries(config.get('users')).find(
+    ([apiKey, user]) => user.username === username,
+  );
+
+const [apikey] = getApiKeyByUsername('matze');
+
+runYoutubeDlBot({
+  telegramApiKey: config.get('bots.youtube_dl.apikey'),
+  homeApihost: `http://localhost:${port}`,
+  homeApiKey: apikey,
 });

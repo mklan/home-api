@@ -1,12 +1,23 @@
 {
   "port": 3000,
+  "users": {
+    "4b83f6d5-4dd7-4e72-b3e5-3cbf43ca55fb": {
+      "username": "firstUser",
+      "roles": ["admin"]
+    }
+  },
+  "bots": {
+    "youtube_dl": {
+      "apikey": "telegram-bot-api-key"
+    }
+  },
   "modules": {
     "youtube_dl": {
-      "video_destination": "videos"
+      "video_destination": "/path/to/youtubeArchive"
     },
     "educom_sms": {
       "user": "your phone number",
-      "password": "your kontomanager password" 
+      "password": "your kontomanager password"
     }
   }
 }
