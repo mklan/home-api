@@ -2,10 +2,7 @@ const users = require('config').get('users');
 
 const auth = (req, res, next) => {
   const apikey = req.query.apikey || req.body.apikey;
-  console.log(req.body);
-  console.log(apikey);
   const user = users[apikey];
-  console.log(users);
   if (!user) {
     return res
       .status(401)
