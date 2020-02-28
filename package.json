@@ -1,10 +1,10 @@
 {
   "name": "home_api",
   "version": "1.1.0",
-  "main": "index.js",
+  "main": "build/src/index.js",
   "license": "MIT",
   "scripts": {
-    "start": "NODE_ENV=development nodemon src/index.js",
+    "start": "rm -rf build && tsc && NODE_ENV=development nodemon build/src/index.js",
     "production": "NODE_ENV=production pm2 start src/index.js"
   },
   "dependencies": {
@@ -24,9 +24,12 @@
     "youtube-dl": "^1.12.2"
   },
   "devDependencies": {
+    "@types/express": "^4.17.2",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.17.2",
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.2",
+    "tslint": "^6.0.0",
+    "typescript": "^3.8.2"
   }
 }

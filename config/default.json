@@ -2,7 +2,7 @@
   "port": 3000,
   "users": {
     "4b83f6d5-4dd7-4e72-b3e5-3cbf43ca55fb": {
-      "username": "firstUser",
+      "username": "matze",
       "roles": ["admin"]
     }
   },

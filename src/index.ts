@@ -22,13 +22,13 @@ app.listen(port, function() {
 
 const getApiKeyByUsername = username =>
   Object.entries(config.get('users')).find(
-    ([apiKey, user]) => user.username === username,
+    ([apiKey, user]: [String, any]) => user.username === username,
   );
 
 const [apikey] = getApiKeyByUsername('matze');
 
-runYoutubeDlBot({
-  telegramApiKey: config.get('bots.youtube_dl.apikey'),
-  homeApihost: `http://localhost:${port}`,
-  homeApiKey: apikey,
-});
+// runYoutubeDlBot({
+//   telegramApiKey: config.get('bots.youtube_dl.apikey'),
+//   homeApihost: `http://localhost:${port}`,
+//   homeApiKey: apikey,
+// });
