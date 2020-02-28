@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "rm -rf build && tsc && NODE_ENV=development nodemon build/src/index.js",
-    "production": "NODE_ENV=production pm2 start src/index.js"
+    "production": "rm -rf build && tsc && NODE_ENV=production pm2 start build/src/index.js"
   },
   "dependencies": {
     "axios": "^0.19.2",
