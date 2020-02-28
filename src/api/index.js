@@ -1,3 +1,5 @@
+import { getLogs, addLog } from './logger';
+
 const { Router } = require('express');
 const { check } = require('express-validator/check');
 const config = require('config');
@@ -30,6 +32,9 @@ router.post(
     password: config.get('modules.educom_sms.password'),
   }),
 );
+
+router.get('/log', auth, getLogs(10));
+router.put('/log', auth, validate(check('payload')), addLog);
 
 // TODO:
 // router.get('/y2mp3', y2mp3({
