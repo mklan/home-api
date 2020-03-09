@@ -22,9 +22,13 @@ npm run production
 
 ## api
 
-download youtube video
+archive a youtube video
 
 `post('/y2mp4', { apikey: 'userApiKey', id: youtubeId })`
+
+archive an image
+
+`post('/image', { apikey: 'userApiKey', url: imageUrl })`
 
 send sms via educom
 

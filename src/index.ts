@@ -11,8 +11,13 @@ const runYoutubeDlBot = require('./bots/telegram/youtube-dl');
 const app = express();
 const port = config.has('port') ? config.get('port') : 3000;
 
+function errorHandler(err, req, res, next) {
+  res.status(500).send({ error: 'Something failed!' });
+}
+
 app.use(bodyParser.json());
 app.use('/', router);
+app.use(errorHandler);
 
 app.listen(port, function() {
   console.log(`HomeApi listening on port ${port}!`);
@@ -27,8 +32,8 @@ const getApiKeyByUsername = username =>
 
 const [apikey] = getApiKeyByUsername('matze');
 
-// runYoutubeDlBot({
-//   telegramApiKey: config.get('bots.youtube_dl.apikey'),
-//   homeApihost: `http://localhost:${port}`,
-//   homeApiKey: apikey,
-// });
+runYoutubeDlBot({
+  telegramApiKey: config.get('bots.youtube_dl.apikey'),
+  homeApihost: `http://localhost:${port}`,
+  homeApiKey: apikey,
+});

@@ -17,6 +17,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "express": "^4.16.4",
     "express-validator": "^5.3.1",
+    "image-downloader": "^3.5.0",
     "node-telegram-bot-api": "^0.40.0",
     "react-router-dom": "^5.1.2",
     "request": "^2.88.0",

@@ -15,6 +15,9 @@
     "youtube_dl": {
       "video_destination": "/path/to/youtubeArchive"
     },
+    "image_dl": {
+      "image_destination": "/path/to/imageArchive"
+    },
     "educom_sms": {
       "user": "your phone number",
       "password": "your kontomanager password"

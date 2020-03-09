@@ -1,4 +1,5 @@
 import { getLogs, addLog } from './logger';
+import imageDl from './image_dl';
 
 const { Router } = require('express');
 const { check } = require('express-validator/check');
@@ -20,6 +21,15 @@ router.post(
   validate(check('id').isString()),
   y2mp4({
     destination: config.get('modules.youtube_dl.video_destination'),
+  }),
+);
+
+router.post(
+  '/image',
+  auth,
+  validate(check('url').isString()),
+  imageDl({
+    destination: config.get('modules.image_dl.image_destination'),
   }),
 );
 
