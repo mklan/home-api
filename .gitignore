@@ -1,5 +1,4 @@
 /node_modules
 .env
-frontend
-config/production.json
-build
+/config/production.json
+/build
