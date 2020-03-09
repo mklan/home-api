@@ -12,7 +12,9 @@ const app = express();
 const port = config.has('port') ? config.get('port') : 3000;
 
 function errorHandler(err, req, res, next) {
-  res.status(500).send({ error: 'Something failed!' });
+  res
+    .status(err.status || 500)
+    .send({ success: false, error: err.message || 'Server error!' });
 }
 
 app.use(bodyParser.json());

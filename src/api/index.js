@@ -1,5 +1,6 @@
 import { getLogs, addLog } from './logger';
 import imageDl from './image_dl';
+import y2mp4 from './youtube_dl';
 
 const { Router } = require('express');
 const { check } = require('express-validator/check');
@@ -10,7 +11,6 @@ const auth = require('../middlewares/auth');
 const validate = require('../middlewares/validate-payload');
 
 // modules
-const { y2mp4 } = require('./youtube_dl');
 const { sendEducomSMS } = require('./educom_sms');
 
 const router = Router();

@@ -2,7 +2,7 @@ const fs = require('fs');
 const youtubedl = require('youtube-dl');
 
 // TODO proper error handling when video folder not found
-const y2mp4 = ({ destination }) => (req, res) => {
+const y2mp4 = ({ destination }) => (req, res, next) => {
   const { id } = req.body;
 
   try {
@@ -25,15 +25,13 @@ const y2mp4 = ({ destination }) => (req, res) => {
         video.pipe(writeStream);
         res.send(info);
       } catch (e) {
-        throw new Error(e);
+        return next(e);
       }
     });
-    video.on('error', e => new Error(e));
+    video.on('error', e => next(e));
   } catch (e) {
-    res.status(500).send(e.message);
+    return next(e);
   }
 };
 
-module.exports = {
-  y2mp4,
-};
+export default y2mp4;
