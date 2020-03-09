@@ -4,10 +4,14 @@
     "4b83f6d5-4dd7-4e72-b3e5-3cbf43ca55fb": {
       "username": "matze",
       "roles": ["admin"]
+    },
+    "94143eb6-0134-45cb-a53b-eddd7b73dc9f": {
+      "username": "telegram-bot",
+      "roles": ["service-account"]
     }
   },
   "bots": {
-    "youtube_dl": {
+    "telegram": {
       "apikey": "telegram-bot-api-key"
     }
   },

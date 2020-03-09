@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 
 const router = require('./api');
 
-const runYoutubeDlBot = require('./bots/telegram/youtube-dl');
+const runTelegramBot = require('./bots/telegram');
 
 const app = express();
 const port = config.has('port') ? config.get('port') : 3000;
@@ -29,13 +29,13 @@ app.listen(port, function() {
 
 const getApiKeyByUsername = username =>
   Object.entries(config.get('users')).find(
-    ([apiKey, user]: [String, any]) => user.username === username,
+    ([_, user]: [String, any]) => user.username === username,
   );
 
-const [apikey] = getApiKeyByUsername('matze');
+const [apikey] = getApiKeyByUsername('telegram-bot');
 
-runYoutubeDlBot({
-  telegramApiKey: config.get('bots.youtube_dl.apikey'),
+runTelegramBot({
+  telegramApiKey: config.get('bots.telegram.apikey'),
   homeApihost: `http://localhost:${port}`,
   homeApiKey: apikey,
 });
